@@ -1,7 +1,7 @@
 import React from 'react'
 import {BrowserRouter} from "react-router-dom";
 import "./App.css"
-import Card from './components/Card';
+import CardList from './components/CardList';
 import NavBar from './components/NavBar';
 
 const App = (() => {
@@ -9,7 +9,7 @@ const App = (() => {
     return (
 		<BrowserRouter>
 			<NavBar />
-			<Card />
+			<CardList />
         </BrowserRouter>
     );
 })
