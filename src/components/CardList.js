@@ -1,13 +1,11 @@
 import { React, useEffect, useState } from "react";
 import { Pagination, Stack } from "@mui/material";
-import { useDispatch, useSelector } from "react-redux";
-import { getData } from "../store/actions/getData";
+import { useSelector } from "react-redux";
 import Card from "./Card";
 
 
 const CardList = (() => {
 
-    const dispatch = useDispatch()
     const data = useSelector(state => state.data)
     const pageSize = 8
     const [pagedData, setPagedData] = useState([])
@@ -15,10 +13,6 @@ const CardList = (() => {
         from: 0,
         to: pageSize
     })
-
-    useEffect(() => {
-        dispatch(getData())
-    }, []);
 
     useEffect(() => {
         setPagedData(data.slice(pagination.from, pagination.to))
