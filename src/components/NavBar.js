@@ -3,7 +3,7 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { Switch } from '@mui/material';
+import { Button, Switch } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateSwitchState } from '../store/actions/switchAction';
 
@@ -14,6 +14,10 @@ const NavBar = () => {
     
     const handleSwitchChange = (event, value) => {
         dispatch(updateSwitchState(event.target.checked))
+    }
+
+    const handleClear = () => {
+        dispatch({ type: 'CLEAR_REMOVED_CARDS' })
     }
 
     return (
@@ -27,6 +31,7 @@ const NavBar = () => {
                     <Typography>
                         Tree
                     </Typography>
+                    <Button className='headerButton' onClick={handleClear} variant='contained'>Вернуть удаленные карточки</Button>
                 </Toolbar>
             </AppBar>
         </Box>

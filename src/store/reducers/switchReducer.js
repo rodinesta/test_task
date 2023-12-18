@@ -1,11 +1,11 @@
 const switchReducer = (state = false, action) => {
-    switch (action.type) {
-      case 'GET_STATE':
-        return action.payload;
-        
-      default:
-        return state;
-    }
-  };
+  switch (action.type) {
+    case 'GET_STATE':
+      return action.payload;
 
-  export default switchReducer
+    default:
+      return state;
+  }
+};
+
+export default switchReducer
