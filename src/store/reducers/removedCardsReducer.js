@@ -1,6 +1,4 @@
-const initialState = [];
-
-const removedCardsReducer= (state = initialState, action) => {
+const removedCardsReducer= (state = [], action) => {
   switch (action.type) {
     case 'REMOVE_CARD':
       return [...state, action.payload];

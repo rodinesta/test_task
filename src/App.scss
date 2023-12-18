@@ -1,85 +1,108 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 .header {
+    flex-grow: 1;
     position: sticky;
     top: 0;
     z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
-    .headerButton {
+    &__button {
         margin-left: 20px;
         background-color: antiquewhite;
         color: black;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
     }
 }
 
-.cardPage {
+.card-page {
     margin: 20px 30px 0px 30px;
 
-    .pagination {
+    &__pagination {
+        display: flex;
+        justify-content: center;
         align-items: center;
+        margin-bottom: 20px;
     }
 
-    .cardList {
+    &__list {
         display: grid;
         gap: 20px 25px;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
         margin-bottom: 20px;
+    }
 
-        .cardItem {
-            height: 400px;
-        }
+    &__item {
+        display: flex;
+        flex-direction: column;
+        height: 550px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        overflow: hidden;
 
-        .cardImage {
-            width: 100%;
-            height: 65%;
-            margin-bottom: 10px;
-            position: relative;
+        &:hover {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+    }
 
-        .cardImage img {
-            object-fit: cover;
-            width: 100%;
-            height: 100%;            
-        }
+    &__image {
+        width: 100%;
+        height: 75%;
+        margin-bottom: 10px;
+        position: relative;
+    }
 
-        .cardItem p {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            text-wrap: wrap;
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
+    &__image img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
 
-        .cardClose {
-            position: absolute;
-            cursor: pointer;
-            font-size: 16px;
-            top: 0;
-            right: 0;
-            background-color: gainsboro;
-            width: 20px;
-            height: 20px;
-            text-align: center;
-        }
+    &__item p {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-wrap: wrap;
+        font-size: 18px;
+        margin-bottom: 5px;
+        padding: 0 10px;
+    }
+
+    &__close {
+        position: absolute;
+        cursor: pointer;
+        font-size: 16px;
+        top: 0;
+        right: 0;
+        background-color: gainsboro;
+        width: 20px;
+        height: 20px;
+        text-align: center;
     }
 }
 
-.treePage {
+.tree-page {
     margin: 20px 30px 0px 30px;
 
-    .categoryFolder {
+    &__category-folder {
         display: flex;
         align-items: start;
         margin-bottom: 5px;
     }
 
-    .categoryFolder button {
+    &__category-folder button {
         margin-right: 10px;
     }
 
-    .categoryItem {
+    &__category-item {
         margin-left: 10px;
     }
 }

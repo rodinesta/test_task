@@ -11,14 +11,14 @@ const Card = (({item}) => {
     const filesize = Math.round(item.filesize / 1000)
 
     const handleClose = () => {
-        dispatch(removeCard(item))
+        dispatch(removeCard(item.image))
     }
 
     return (
-        <div className="cardItem" >
-            <div className="cardImage">
+        <div className="card-page__item" >
+            <div className="card-page__image">
                 <img alt={item.image} src={"http://contest.elecard.ru/frontend_data/" + item.image}/>
-                <span className="cardClose" onClick={handleClose}>&#10006;</span>
+                <span className="card-page__close" onClick={handleClose}>&#10006;</span>
             </div>
             <p>Название: {item.image}</p>
             <p>Категория: {item.category}</p>

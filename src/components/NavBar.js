@@ -1,9 +1,5 @@
 import React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import { Button, Switch } from '@mui/material';
+import { AppBar, Box, Toolbar, Typography, Button, Switch } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateSwitchState } from '../store/actions/switchAction';
 
@@ -21,7 +17,7 @@ const NavBar = () => {
     }
 
     return (
-        <Box className="header" sx={{ flexGrow: 1 }}>
+        <Box class="header" sx={{ flexGrow: 1 }}>
             <AppBar position="static">
                 <Toolbar>
                     <Typography>
@@ -31,7 +27,7 @@ const NavBar = () => {
                     <Typography>
                         Tree
                     </Typography>
-                    <Button className='headerButton' onClick={handleClear} variant='contained'>Вернуть удаленные карточки</Button>
+                    <Button class="header__button" onClick={handleClear} variant='contained'>Вернуть удаленные карточки</Button>
                 </Toolbar>
             </AppBar>
         </Box>
